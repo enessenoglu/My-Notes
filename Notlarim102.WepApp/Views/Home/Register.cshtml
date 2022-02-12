@@ -1,0 +1,62 @@
+﻿@using Notlarim102.Entity.ValueObject
+@model RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<link href="~/Content/Login-RegisterStyle.css" rel="stylesheet" />
+
+@using (Html.BeginForm())
+{
+    <div class="logreg">
+        <main class="form-signin">
+            <form>
+
+                <img class="mb-4 rounded-circle" src="~/images/icon-256x256.png" alt="" width="144" height="125">
+                <h1 class="h3 mb-3 fw-normal">Login Form</h1>
+                @Html.ValidationSummary(false)
+                <div class="form-floating">
+                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "username", id = "floatingInput" })
+
+                    <label for="floatingInput">User Name</label>
+                </div>
+               
+                <div class="form-floating">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "email", id = "floatingInput" })
+
+                    <label for="floatingInput">Email</label>
+                </div>
+                
+                <div class="form-floating">
+                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "password", id = "floatingPassword", type = "password" })
+
+                    <label for="floatingPassword">Password</label>
+                </div>
+               
+                <div class="form-floating">
+                    @Html.TextBoxFor(model => model.RePassword, new { @class = "form-control", placeholder = "RePassword" , id = "floatingRePassword", type = "password" })
+                    <label for="floatingRePassword">RePassword</label>
+                </div>
+
+                @*<div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>*@
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+            </form>
+        </main>
+    </div>
+}
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("Header").hide();
+        $("footer").hide();
+        $("#category1").hide();
+        $("#category2").addClass("col-md-12").removeClass("col-md-10");
+       
+
+    });
+</script>

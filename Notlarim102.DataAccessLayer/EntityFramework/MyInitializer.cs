@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notlarim102.DataAccessLayer
+namespace Notlarim102.DataAccessLayer.EntityFramework
 {
     public class MyInitializer:CreateDatabaseIfNotExists<NotlarimContext>
     {
@@ -20,9 +20,10 @@ namespace Notlarim102.DataAccessLayer
                 Email = "enessenoglu954@gmail.com",
                 ActivateGuid = Guid.NewGuid(),
                 IsActive = true,
-                IsAdmin=true,
-                UserName="enessenoglu",
-                Password="senoglu55",
+                IsAdmin = true,
+                UserName = "enessenoglu",
+                Password = "senoglu55",
+                ProfileImageFile = "user1.jpg",
                 CreatedOn=DateTime.Now,
                 ModifiedOn=DateTime.Now,
                 ModifiedUserName="enessenoglu"
@@ -38,6 +39,7 @@ namespace Notlarim102.DataAccessLayer
                 IsAdmin = false,
                 UserName = "ahmetsenoglu",
                 Password = "123456",
+                ProfileImageFile = "user1.jpg",
                 CreatedOn = DateTime.Now.AddHours(1),
                 ModifiedOn = DateTime.Now.AddMinutes(65),
                 ModifiedUserName = "enessenoglu"
@@ -56,6 +58,7 @@ namespace Notlarim102.DataAccessLayer
                     IsAdmin = false,
                     UserName = $"user-{i}",
                     Password = "123456",
+                    ProfileImageFile = "user1.jpg",
                     CreatedOn = FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-1),DateTime.Now),
                     ModifiedOn = FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-1), DateTime.Now),
                     ModifiedUserName = $"user-{i}"
@@ -75,7 +78,6 @@ namespace Notlarim102.DataAccessLayer
                     CreatedOn=DateTime.Now,
                     ModifiedOn=DateTime.Now,
                     ModifiedUserName="enessenoglu"
-
                 };
                 context.Categories.Add(cat);
                 //adding fake Notes...

@@ -1,0 +1,64 @@
+﻿@using Notlarim102.WepApp
+@model IEnumerable<Notlarim102.Entity.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<br /><hr />
+      <p>
+
+          @Bootstrap.LinkBotton("/Category/Create" ,"primary",string.Empty, " Yeni Kayıt", "bi bi-plus-circle", " Yeni Kayıt") 
+          
+      </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedUserName)
+        </td>
+        <td>
+            @Bootstrap.LinkBotton("/Category/Edit"+item.Id,"warning","btn-sm","Guncelle","bi bi-pencil",string.Empty) |
+            @Bootstrap.LinkBotton("/Category/Details" + item.Id, "info", "btn-sm", "Detay", "bi bi-search", string.Empty)|
+            @Bootstrap.LinkBotton("/Category/Delete" + item.Id, "danger", "btn-sm", "Sil", "bi bi-trash", string.Empty)
+            
+            @*@Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-warning bi bi-pencil-square" })
+        @Html.ActionLink(" ", "Details", new { id = item.Id }, new { @class = "btn btn-outline-secondary bi bi-search" })
+        @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "btn btn-outline-danger bi bi bi-file-earmark-x-fill" })*@
+        </td>
+    </tr>
+}
+
+</table>

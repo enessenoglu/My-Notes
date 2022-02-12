@@ -51,6 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ManagerBase.cs" />
+    <Compile Include="BusinessLayerResult.cs" />
+    <Compile Include="CategoryManager.cs" />
+    <Compile Include="CommentManager.cs" />
+    <Compile Include="LikedManager.cs" />
+    <Compile Include="NoteManager.cs" />
+    <Compile Include="NotlarimUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs" />
   </ItemGroup>
@@ -59,6 +66,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Notlarim102.Common\Notlarim102.Common.csproj">
+      <Project>{7fa020e1-1c36-4e9a-97c9-8dcf896802bc}</Project>
+      <Name>Notlarim102.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Notlarim102.Core\Notlarim102.Core.csproj">
+      <Project>{bc78c8f9-33dc-4691-9aeb-cfec22d92e64}</Project>
+      <Name>Notlarim102.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Notlarim102.DataAccessLayer\Notlarim102.DataAccessLayer.csproj">
       <Project>{491411e2-b65c-434c-ad75-0e776ae424eb}</Project>
       <Name>Notlarim102.DataAccessLayer</Name>

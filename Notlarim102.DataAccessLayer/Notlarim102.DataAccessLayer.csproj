@@ -54,8 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyInitializer.cs" />
-    <Compile Include="NotlarimContext.cs" />
+    <Compile Include="EntityFramework\MyInitializer.cs" />
+    <Compile Include="EntityFramework\NotlarimContext.cs" />
+    <Compile Include="EntityFramework\Repository.cs" />
+    <Compile Include="EntityFramework\RepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,10 +65,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Notlarim102.Common\Notlarim102.Common.csproj">
+      <Project>{7fa020e1-1c36-4e9a-97c9-8dcf896802bc}</Project>
+      <Name>Notlarim102.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Notlarim102.Core\Notlarim102.Core.csproj">
+      <Project>{bc78c8f9-33dc-4691-9aeb-cfec22d92e64}</Project>
+      <Name>Notlarim102.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Notlarim102.Entity\Notlarim102.Entity.csproj">
       <Project>{bf8127e2-b9b9-4d1c-a935-d02f8b03d528}</Project>
       <Name>Notlarim102.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstract\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
